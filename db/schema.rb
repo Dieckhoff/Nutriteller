@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150811182828) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "dishes", force: :cascade do |t|
     t.string   "title"
     t.datetime "created_at", null: false
@@ -28,7 +31,6 @@ ActiveRecord::Schema.define(version: 20150811182828) do
     t.string   "title"
     t.boolean  "is_vegetarian"
     t.boolean  "is_vegan"
-    t.boolean  "is_paleo"
     t.boolean  "is_gluten_free"
     t.boolean  "is_lactose_free"
     t.datetime "created_at",      null: false
