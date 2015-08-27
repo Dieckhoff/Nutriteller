@@ -1,0 +1,27 @@
+h1
+  = @dish.title
+br
+h2 Ingredients:
+- @dish.ingredients.each do |ingredient|
+  = link_to ingredient.title.capitalize, ingredient
+  br
+
+h2 Friendly for the following diets:
+
+bold Vegetarian:
+= @dish.is_friendly_for?(diet: :vegetarian)
+br
+
+bold Vegan:
+= @dish.is_friendly_for?(diet: :vegan)
+br
+
+bold Gluten Free:
+= @dish.is_friendly_for?(diet: :gluten_free)
+br
+
+bold Lactose Free:
+= @dish.is_friendly_for?(diet: :lactose_free)
+
+p
+  = link_to 'Home', root_path

@@ -1,0 +1,18 @@
+h1 New Ingredient
+
+= form_for :ingredient, url: ingredients_path do |f|
+  p
+    = f.label :title
+    br
+    = f.text_field :title
+    br
+
+    - Ingredient.available_diets.each do |diet|
+      = f.check_box "is_#{diet}"
+      = f.label "is_#{diet}", diet.to_s.gsub(/_/, ' ').titleize
+      br
+  p
+    = f.submit
+
+p
+  = link_to 'Home', root_path

@@ -1,0 +1,24 @@
+h1 New Dish
+
+= form_for :dish, url: dishes_path do |f|
+  p
+    = f.label :title
+    br
+    = f.text_field :title
+
+  - @ingredients.each do |ingredient|
+    label
+      = check_box_tag :'dish[ingredients][]', ingredient.id
+      = ingredient.title.capitalize
+    br
+
+    / = fields_for 'dish[ingredients][]' , ingredient do |ingredient_fields|
+    /   = ingredient_fields.check_box :id
+    /   = ingredient_fields.label :id, ingredient.title
+    /   br
+
+  p
+    = f.submit
+
+p
+  = link_to 'Home', root_path

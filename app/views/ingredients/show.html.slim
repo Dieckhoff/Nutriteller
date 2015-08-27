@@ -1,0 +1,18 @@
+p
+  h1
+    = @ingredient.title
+  br
+  strong Vegetarian:
+  = @ingredient.is_vegetarian
+  br
+  strong Vegan:
+  = @ingredient.is_vegan
+  br
+  strong Gluten Free:
+  = @ingredient.is_gluten_free
+  br
+  strong Lactose Free:
+  = @ingredient.is_lactose_free
+
+p
+  = link_to 'Home', root_path

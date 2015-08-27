@@ -1,0 +1,10 @@
+h1 Ingredients
+
+- @ingredients.each do |ingredient|
+  = link_to ingredient.title, ingredient
+  br
+
+p
+  = link_to 'Add Ingredient', new_ingredient_path
+p
+  = link_to 'Home', root_path
